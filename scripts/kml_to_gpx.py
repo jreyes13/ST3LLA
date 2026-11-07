@@ -79,7 +79,7 @@ def write_gpx(output_path, track_name, description, segments):
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write('<?xml version="1.0" encoding="UTF-8"?>\n')
-        f.write('<gpx version="1.1" creator="CaminoSantiago-GIS (https://github.com/jreyes13/Camino-Santiago)"\n')
+        f.write('<gpx version="1.1" creator="ST3LLA (https://github.com/jreyes13/st3lla)"\n')
         f.write('  xmlns="http://www.topografix.com/GPX/1/1"\n')
         f.write('  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"\n')
         f.write('  xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">\n')

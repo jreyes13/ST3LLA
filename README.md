@@ -1,7 +1,7 @@
 # 🛰️ ST3LLA - Cartografía de Rutas & Ecosistema Jacobeo
 
 <p align="left">
-  <a href="https://jreyes13.github.io/Camino-Santiago/"><img src="https://img.shields.io/badge/🌐_ST3LLA_Live_Map-jreyes13.github.io%2FCamino--Santiago-2A9D8F?style=for-the-badge&logo=leaflet&logoColor=white" alt="ST3LLA Live Map" /></a>
+  <a href="https://jreyes13.github.io/st3lla/"><img src="https://img.shields.io/badge/🌐_ST3LLA_Live_Map-jreyes13.github.io%2Fst3lla-2A9D8F?style=for-the-badge&logo=leaflet&logoColor=white" alt="ST3LLA Live Map" /></a>
 </p>
 
 <p align="left">
@@ -53,7 +53,7 @@ Con epicentro en **Galicia** —donde el océano Atlántico y la tierra firme se
 
 ## 🗺️ Interactive Web Viewer
 
-👉 **Acceso directo online:** **[https://jreyes13.github.io/Camino-Santiago/](https://jreyes13.github.io/Camino-Santiago/)**
+👉 **Acceso directo online:** **[https://jreyes13.github.io/st3lla/](https://jreyes13.github.io/st3lla/)**
 
 También puedes abrir directamente [`index.html`](index.html) de manera local en cualquier navegador:
 - **Panel lateral redimensionable y deslizable**:
