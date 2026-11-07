@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Camino de Santiago - Visor Cartográfico & GPX</title>
+  <title>ST3LLA - Cartografía & Rutas Jacobeas | Ecosistema TRISAT & WINE³ai</title>
   
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
@@ -816,12 +816,15 @@
   <div id="sidebar">
     <div class="sidebar-header">
       <div class="sidebar-header-top">
-        <h1><i class="fa-solid fa-map-location-dot"></i> Camino de Santiago</h1>
-        <button id="btn-fit-global" style="background:rgba(255,255,255,0.15);border:none;color:white;padding:3px 7px;border-radius:4px;font-size:0.72rem;cursor:pointer;" title="Encuadrar toda la red jacobea">
+        <h1><i class="fa-solid fa-compass" style="color:var(--highlight);"></i> ST3LLA</h1>
+        <button id="btn-fit-global" style="background:rgba(255,255,255,0.15);border:none;color:white;padding:4px 8px;border-radius:4px;font-size:0.72rem;cursor:pointer;font-weight:600;" title="Encuadrar toda la red de rutas">
           <i class="fa-solid fa-globe"></i> Red Global
         </button>
       </div>
-      <div class="subtitle">Repositorio Cartográfico & Tracks GPX (24.493 km)</div>
+      <div class="subtitle" style="display:flex;align-items:center;justify-content:space-between;margin-top:2px;">
+        <span>Cartografía & Rutas Jacobeas (24.493 km)</span>
+        <span style="font-size:0.68rem;background:rgba(255,255,255,0.18);padding:1px 5px;border-radius:3px;letter-spacing:0.3px;">TRISAT · WINE³ai</span>
+      </div>
     </div>
 
     <!-- Mode Switcher Tabs -->

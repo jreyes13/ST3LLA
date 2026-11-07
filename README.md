@@ -1,19 +1,25 @@
-# 🥾 Way of St. James (Camino de Santiago) - GIS & Cartographic Repository
+# 🛰️ ST3LLA - Cartografía de Rutas & Ecosistema Jacobeo
 
 <p align="left">
-  <a href="https://jreyes13.github.io/Camino-Santiago/"><img src="https://img.shields.io/badge/🌐_Live_Web_Map-jreyes13.github.io%2FCamino--Santiago-2A9D8F?style=for-the-badge&logo=leaflet&logoColor=white" alt="Live Web Map" /></a>
+  <a href="https://jreyes13.github.io/Camino-Santiago/"><img src="https://img.shields.io/badge/🌐_ST3LLA_Live_Map-jreyes13.github.io%2FCamino--Santiago-2A9D8F?style=for-the-badge&logo=leaflet&logoColor=white" alt="ST3LLA Live Map" /></a>
 </p>
 
 <p align="left">
-  <img src="https://img.shields.io/badge/QGIS-3.x-589632?style=flat-square&logo=qgis&logoColor=white" alt="QGIS 3.x" />
-  <img src="https://img.shields.io/badge/Formats-GPX%20%7C%20KML%20%7C%20GeoJSON-007acc?style=flat-square" alt="GPX, KML and GeoJSON Formats" />
+  <img src="https://img.shields.io/badge/Project-ST3LLA-1D3557?style=flat-square&logo=compass&logoColor=white" alt="Project ST3LLA" />
+  <img src="https://img.shields.io/badge/Ecosystem-TRISAT%20%7C%20WINE%C2%B3ai-F4A261?style=flat-square" alt="TRISAT & WINE³ai" />
+  <img src="https://img.shields.io/badge/Focus-Galicia%20%7C%20Mar%20%26%20Terra-264653?style=flat-square" alt="Galicia Mar & Terra" />
   <img src="https://img.shields.io/badge/Coverage-24%2C493%20km-orange?style=flat-square" alt="24,493 km covered" />
   <img src="https://img.shields.io/badge/Tracks-223%20GPX-success?style=flat-square" alt="223 GPX tracks" />
-  <img src="https://img.shields.io/badge/Data-IGN%20%2F%20CNIG%20%2F%20FEAACS%20%2F%20OSM-lightgrey?style=flat-square" alt="Data IGN / CNIG / FEAACS / OSM" />
+  <img src="https://img.shields.io/badge/QGIS-3.x-589632?style=flat-square&logo=qgis&logoColor=white" alt="QGIS 3.x" />
   <img src="https://img.shields.io/badge/License-GPL--3.0-blue?style=flat-square" alt="GPL-3.0 License" />
 </p>
 
-An open repository dedicated to collecting, processing, standardizing, and visualizing the pilgrimage routes of the **Way of St. James (*Camino de Santiago*)**—including both traditional Iberian routes and feeder pathways across Central Europe—powered by Geographic Information Systems (**QGIS**) and modern web cartography.
+**ST3LLA** (*Campus Stellae*) es la plataforma cartográfica integral de rutas que fusiona la teledetección espacial de **TRISAT**, el conocimiento de la tierra y del vino impulsado por IA de **WINE³ai**, y la mayor red de senderos culturales y de peregrinación, comenzando por el mítico **Camino de Santiago**.
+
+Con epicentro en **Galicia** —donde el océano Atlántico y la tierra firme se abrazan como confluencia histórica de personas y culturas—, **ST3LLA** triangula:
+1. **El Cielo (Espacio & TRISAT):** Datos de observación satelital, posicionamiento GNSS y monitorización medioambiental.
+2. **La Tierra & El Vino (WINE³ai):** Terruño, paisajes vitivinícolas protegidos, senderos y patrimonio etnográfico.
+3. **El Mar & Las Personas (ST3LLA):** Rutas costeras e interiores, mapas interactivos y el espíritu de encuentro humano del peregrino.
 
 ---
 
