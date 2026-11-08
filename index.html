@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ST3LLA - Cartografía & Rutas Jacobeas | Ecosistema TRISAT & WINE³ai</title>
   
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel=preconnect href=https://fonts.googleapis.com>
+  <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
   <!-- Font Awesome -->
@@ -12,15 +16,15 @@
 
   <style>
     :root {
-      --primary: #1D3557;
-      --primary-dark: #14243B;
-      --secondary: #457B9D;
-      --accent: #E63946;
-      --highlight: #F4A261;
-      --bg-page: #F1F5F9;
-      --bg-card: #FFFFFF;
-      --dark: #1E293B;
-      --border: #E2E8F0;
+      --primary: #38bdf8;
+      --primary-dark: #0284c7;
+      --secondary: #818cf8;
+      --accent: #fbbf24;
+      --highlight: #34d399;
+      --bg-page: #07090e;
+      --bg-card: #0d121e;
+      --dark: #f8fafc;
+      --border: #1e293b;
       --sidebar-width: 440px;
     }
 
@@ -31,7 +35,7 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       display: flex;
       height: 100vh;
       width: 100vw;
@@ -47,7 +51,7 @@
       min-width: 320px;
       max-width: 80vw;
       height: 100vh;
-      background: #FFFFFF;
+      background: #0d121e;
       border-right: 1px solid var(--border);
       display: flex;
       flex-direction: column;
@@ -85,7 +89,7 @@
       top: 16px;
       left: calc(var(--sidebar-width) + 12px);
       z-index: 1001;
-      background: #FFFFFF;
+      background: #0d121e;
       color: var(--primary);
       border: 1px solid var(--border);
       width: 38px;
@@ -111,7 +115,7 @@
 
     /* Sidebar Header */
     .sidebar-header {
-      background: linear-gradient(135deg, #1D3557 0%, #2A4365 100%);
+      background: linear-gradient(135deg, #090e18 0%, #0d1b2a 100%); border-bottom: 1px solid #1e293b;
       color: white;
       padding: 14px 18px 12px 18px;
       display: flex;
@@ -143,7 +147,7 @@
     .view-mode-tabs {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      background: #F1F5F9;
+      background: #0f172a;
       padding: 4px;
       border-bottom: 1px solid var(--border);
     }
@@ -159,7 +163,7 @@
       align-items: center;
       justify-content: center;
       gap: 6px;
-      color: #64748B;
+      color: #94a3b8;
       transition: all 0.15s ease;
       user-select: none;
     }
@@ -169,14 +173,14 @@
     }
 
     .mode-tab.active {
-      background: #FFFFFF;
+      background: #0d121e;
       color: var(--primary);
       box-shadow: 0 1px 4px rgba(0,0,0,0.08);
     }
 
     /* Document Navigation Pager Bar */
     .doc-pager-bar {
-      background: #FFFFFF;
+      background: #0d121e;
       border-bottom: 1px solid var(--border);
       padding: 8px 14px;
       display: flex;
@@ -186,7 +190,7 @@
     }
 
     .pager-btn {
-      background: #F1F5F9;
+      background: #0f172a;
       border: 1px solid var(--border);
       color: var(--primary);
       padding: 6px 10px;
@@ -221,12 +225,12 @@
     .doc-route-select {
       width: 100%;
       padding: 5px 8px;
-      border: 1px solid #CBD5E1;
+      border: 1px solid #1e293b;
       border-radius: 6px;
       font-size: 0.82rem;
       font-weight: 600;
       color: var(--primary);
-      background: #FAFAFA;
+      background: #0a0d14;
       outline: none;
       cursor: pointer;
       text-overflow: ellipsis;
@@ -238,7 +242,7 @@
 
     .pager-counter {
       font-size: 0.68rem;
-      color: #64748B;
+      color: #94a3b8;
       margin-top: 2px;
     }
 
@@ -257,13 +261,13 @@
     }
 
     .doc-viewport::-webkit-scrollbar-thumb {
-      background: #CBD5E1;
+      background: #1e293b;
       border-radius: 4px;
     }
 
     /* Document Sheet (Hoja de Papel) */
     .doc-sheet {
-      background: #FFFFFF;
+      background: #0d121e;
       border-radius: 10px;
       box-shadow: 0 4px 18px rgba(0,0,0,0.06);
       border: 1px solid var(--border);
@@ -296,7 +300,7 @@
 
     /* Header inside Document Sheet */
     .doc-sheet-header {
-      border-bottom: 2px solid #F1F5F9;
+      border-bottom: 1px solid #1e293b;
       padding-bottom: 14px;
     }
 
@@ -308,7 +312,7 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.6px;
-      color: #64748B;
+      color: #94a3b8;
       margin-bottom: 6px;
     }
 
@@ -324,8 +328,8 @@
 
     .doc-route-code {
       font-size: 0.8rem;
-      background: #E2E8F0;
-      color: #1E293B;
+      background: #1e293b;
+      color: #f8fafc;
       padding: 2px 7px;
       border-radius: 4px;
       font-weight: 700;
@@ -334,7 +338,7 @@
 
     .doc-region-tag {
       font-size: 0.78rem;
-      color: #64748B;
+      color: #94a3b8;
       margin-top: 4px;
     }
 
@@ -343,8 +347,8 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 10px;
-      background: #F8FAFC;
-      border: 1px solid #E2E8F0;
+      background: #0a0d14;
+      border: 1px solid #1e293b;
       padding: 12px 14px;
       border-radius: 8px;
     }
@@ -364,7 +368,7 @@
       font-size: 0.68rem;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      color: #64748B;
+      color: #94a3b8;
       font-weight: 600;
     }
 
@@ -400,13 +404,13 @@
     }
 
     .doc-action-btn.btn-outline {
-      background: #FFFFFF;
-      color: #475569;
-      border: 1px solid #CBD5E1;
+      background: #0d121e;
+      color: #94a3b8;
+      border: 1px solid #1e293b;
     }
 
     .doc-action-btn.btn-outline:hover {
-      background: #F1F5F9;
+      background: #0f172a;
       color: var(--primary);
     }
 
@@ -427,11 +431,11 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      color: #475569;
+      color: #94a3b8;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid #E2E8F0;
+      border-bottom: 1px solid #1e293b;
       padding-bottom: 6px;
       margin-top: 4px;
     }
@@ -444,8 +448,8 @@
 
     .doc-stage-row {
       padding: 9px 12px;
-      background: #FAFAFA;
-      border: 1px solid #E2E8F0;
+      background: #0a0d14;
+      border: 1px solid #1e293b;
       border-radius: 6px;
       display: flex;
       align-items: center;
@@ -455,8 +459,8 @@
     }
 
     .doc-stage-row:hover {
-      background: #F1F5F9;
-      border-color: #CBD5E1;
+      background: #0f172a;
+      border-color: #1e293b;
       transform: translateX(2px);
     }
 
@@ -477,7 +481,7 @@
     .doc-stage-name {
       font-size: 0.84rem;
       font-weight: 600;
-      color: #1E293B;
+      color: #f8fafc;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -485,7 +489,7 @@
 
     .doc-stage-meta {
       font-size: 0.72rem;
-      color: #64748B;
+      color: #94a3b8;
       display: flex;
       gap: 8px;
     }
@@ -516,7 +520,7 @@
       display: flex;
       justify-content: space-between;
       padding-top: 14px;
-      border-top: 1px solid #E2E8F0;
+      border-top: 1px solid #1e293b;
       margin-top: 8px;
     }
 
@@ -564,7 +568,7 @@
     .search-box {
       padding: 10px 14px;
       border-bottom: 1px solid var(--border);
-      background: #FAFAFA;
+      background: #0a0d14;
     }
 
     .search-input-wrapper {
@@ -583,7 +587,7 @@
     .search-input-wrapper input {
       width: 100%;
       padding: 8px 32px 8px 34px;
-      border: 1px solid #CBD5E1;
+      border: 1px solid #1e293b;
       border-radius: 6px;
       font-size: 0.86rem;
       outline: none;
@@ -616,7 +620,7 @@
     .region-nav {
       padding: 8px 14px;
       border-bottom: 1px solid var(--border);
-      background: #FFFFFF;
+      background: #0d121e;
       display: flex;
       gap: 6px;
       overflow-x: auto;
@@ -629,7 +633,7 @@
     }
 
     .region-nav::-webkit-scrollbar-thumb {
-      background: #CBD5E1;
+      background: #1e293b;
       border-radius: 4px;
     }
 
@@ -638,8 +642,8 @@
       font-size: 0.74rem;
       font-weight: 600;
       border-radius: 16px;
-      background: #F1F5F9;
-      color: #475569;
+      background: #0f172a;
+      color: #94a3b8;
       border: 1px solid transparent;
       cursor: pointer;
       display: inline-flex;
@@ -650,8 +654,8 @@
     }
 
     .region-tab:hover {
-      background: #E2E8F0;
-      color: #1E293B;
+      background: #1e293b;
+      color: #f8fafc;
     }
 
     .region-tab.active {
@@ -687,7 +691,7 @@
     }
 
     .index-list::-webkit-scrollbar-thumb {
-      background: #CBD5E1;
+      background: #1e293b;
       border-radius: 4px;
     }
 
@@ -695,7 +699,7 @@
       padding: 10px 12px;
       border: 1px solid var(--border);
       border-radius: 8px;
-      background: #FFFFFF;
+      background: #0d121e;
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -705,7 +709,7 @@
     }
 
     .index-item-card:hover {
-      background: #F8FAFC;
+      background: #0a0d14;
       box-shadow: 0 2px 8px rgba(0,0,0,0.06);
       transform: translateX(3px);
     }
@@ -718,7 +722,7 @@
     .index-item-title {
       font-size: 0.88rem;
       font-weight: 600;
-      color: #1E293B;
+      color: #f8fafc;
       display: flex;
       align-items: center;
       gap: 6px;
@@ -726,7 +730,7 @@
 
     .index-item-meta {
       font-size: 0.72rem;
-      color: #64748B;
+      color: #94a3b8;
       margin-top: 2px;
     }
 
@@ -784,7 +788,7 @@
       grid-template-columns: 1fr 1fr;
       gap: 6px;
       margin: 6px 0;
-      background: #F8FAFC;
+      background: #0a0d14;
       padding: 6px 8px;
       border-radius: 4px;
       font-size: 0.78rem;
@@ -815,6 +819,11 @@
   <!-- Sidebar -->
   <div id="sidebar">
     <div class="sidebar-header">
+      <div style="margin-bottom: 6px;">
+        <a href="https://jreyes13.net/" style="text-decoration:none;color:#94a3b8;font-size:0.75rem;font-weight:600;display:inline-flex;align-items:center;gap:5px;padding:3px 8px;border-radius:6px;background:rgba(255,255,255,0.06);border:1px solid #1e293b;transition:all 0.2s ease;">
+          <i class="fa-solid fa-arrow-left"></i> jreyes13.net
+        </a>
+      </div>
       <div class="sidebar-header-top">
         <h1><i class="fa-solid fa-compass" style="color:var(--highlight);"></i> ST3LLA</h1>
         <button id="btn-fit-global" style="background:rgba(255,255,255,0.15);border:none;color:white;padding:4px 8px;border-radius:4px;font-size:0.72rem;cursor:pointer;font-weight:600;" title="Encuadrar toda la red de rutas">
@@ -925,6 +934,11 @@
 
     // Tile Layers (100% libres de API Key)
     const baseMaps = {
+      "CartoDB Dark Matter": L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 20
+      }),
       "OpenStreetMap": L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         maxZoom: 19
@@ -947,7 +961,7 @@
       })
     };
 
-    baseMaps["OpenStreetMap"].addTo(map);
+    baseMaps["CartoDB Dark Matter"].addTo(map);
     L.control.layers(baseMaps, null, { position: 'topright' }).addTo(map);
 
     // Sidebar Elements
