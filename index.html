@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ST3LLA - Cartografía & Rutas Jacobeas | Ecosistema TRISAT & WINE³ai</title>
+  <link rel="icon" type="image/svg+xml" href="assets/ST3LLA_logo.svg">
   
     <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
   <link rel=preconnect href=https://fonts.googleapis.com>
@@ -16,16 +17,77 @@
 
   <style>
     :root {
-      --primary: #38bdf8;
-      --primary-dark: #0284c7;
-      --secondary: #818cf8;
-      --accent: #fbbf24;
-      --highlight: #34d399;
-      --bg-page: #07090e;
-      --bg-card: #0d121e;
-      --dark: #f8fafc;
-      --border: #1e293b;
+      /* ST3LLA New Unified Brand Tokens */
+      --primary: #738AAD;          /* Azul Pizarra Pastel */
+      --primary-dark: #4F6485;
+      --secondary: #B9995D;        /* Oro Pastel Suave */
+      --accent: #B9995D;           /* Oro Pastel */
+      --highlight: #809A7F;        /* Verde Salvia */
+      --bg-page: #181E26;          /* Pizarra Profundo */
+      --bg-card: #232B35;          /* Superficie Pizarra */
+      --dark: #F8FAFC;
+      --border: #354150;
       --sidebar-width: 440px;
+    }
+
+    [data-theme="light"] {
+      --bg-page: #f8fafc;
+      --bg-card: #ffffff;
+      --dark: #0f172a;
+      --border: #e2e8f0;
+    }
+
+    [data-theme="light"] body {
+      background: #f8fafc !important;
+      color: #0f172a !important;
+    }
+
+    [data-theme="light"] #sidebar {
+      background: #ffffff !important;
+      border-right-color: #e2e8f0 !important;
+      color: #0f172a !important;
+      box-shadow: 4px 0 20px rgba(0, 0, 0, 0.04) !important;
+    }
+
+    [data-theme="light"] .sidebar-header {
+      background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%) !important;
+      border-bottom-color: #cbd5e1 !important;
+      color: #0f172a !important;
+    }
+
+    [data-theme="light"] .sidebar-header h1,
+    [data-theme="light"] .sidebar-header .subtitle {
+      color: #0f172a !important;
+    }
+
+    [data-theme="light"] .view-mode-tabs {
+      background: #f1f5f9 !important;
+      border-bottom-color: #e2e8f0 !important;
+    }
+
+    [data-theme="light"] .mode-tab {
+      color: #64748b !important;
+    }
+
+    [data-theme="light"] .mode-tab.active {
+      background: #ffffff !important;
+      color: #4F6485 !important;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06) !important;
+    }
+
+    [data-theme="light"] .doc-card,
+    [data-theme="light"] .doc-pager-bar,
+    [data-theme="light"] .doc-stage-card,
+    [data-theme="light"] .index-card {
+      background: #ffffff !important;
+      border-color: #e2e8f0 !important;
+      color: #0f172a !important;
+    }
+
+    [data-theme="light"] #sidebar-toggle {
+      background: #ffffff !important;
+      color: #4F6485 !important;
+      border-color: #cbd5e1 !important;
     }
 
     * {
@@ -825,10 +887,16 @@
         </a>
       </div>
       <div class="sidebar-header-top">
-        <h1><i class="fa-solid fa-compass" style="color:var(--highlight);"></i> ST3LLA</h1>
-        <button id="btn-fit-global" style="background:rgba(255,255,255,0.15);border:none;color:white;padding:4px 8px;border-radius:4px;font-size:0.72rem;cursor:pointer;font-weight:600;" title="Encuadrar toda la red de rutas">
-          <i class="fa-solid fa-globe"></i> Red Global
-        </button>
+        <h1 style="display:flex;align-items:center;gap:8px;">
+          <img src="assets/ST3LLA_logo.svg" alt="ST3LLA" style="width:28px;height:28px;" />
+          <span>ST3LLA</span>
+        </h1>
+        <div style="display:flex;align-items:center;gap:6px;">
+          <button id="btn-theme-toggle" style="background:rgba(255,255,255,0.15);border:none;color:white;padding:4px 8px;border-radius:4px;font-size:0.75rem;cursor:pointer;font-weight:600;" title="Cambiar tema">🌙</button>
+          <button id="btn-fit-global" style="background:rgba(255,255,255,0.15);border:none;color:white;padding:4px 8px;border-radius:4px;font-size:0.72rem;cursor:pointer;font-weight:600;" title="Encuadrar toda la red de rutas">
+            <i class="fa-solid fa-globe"></i> Red Global
+          </button>
+        </div>
       </div>
       <div class="subtitle" style="display:flex;align-items:center;justify-content:space-between;margin-top:2px;">
         <span>Cartografía & Rutas Jacobeas (24.493 km)</span>
@@ -1527,6 +1595,37 @@
         map.fitBounds(allBounds, { padding: [40, 40], animate: true });
       }
     });
+
+    // Dark / Light Theme Toggle
+    const themeBtn = document.getElementById('btn-theme-toggle');
+    if (themeBtn) {
+      const updateIcon = (isDark) => {
+        themeBtn.innerHTML = isDark ? '🌙' : '☀️';
+      };
+      const savedTheme = localStorage.getItem('theme') || localStorage.getItem('jreyes13_theme') || 'dark';
+      if (savedTheme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        updateIcon(false);
+      } else {
+        updateIcon(true);
+      }
+
+      themeBtn.addEventListener('click', () => {
+        const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+        const nextTheme = isLight ? 'dark' : 'light';
+        if (nextTheme === 'light') {
+          document.documentElement.setAttribute('data-theme', 'light');
+          localStorage.setItem('theme', 'light');
+          localStorage.setItem('jreyes13_theme', 'light');
+          updateIcon(false);
+        } else {
+          document.documentElement.removeAttribute('data-theme');
+          localStorage.setItem('theme', 'dark');
+          localStorage.setItem('jreyes13_theme', 'dark');
+          updateIcon(true);
+        }
+      });
+    }
 
     // Check if routes data is available from window.ROUTES_GEOJSON or fetch
     if (window.ROUTES_GEOJSON) {
