@@ -78,10 +78,63 @@
     [data-theme="light"] .doc-card,
     [data-theme="light"] .doc-pager-bar,
     [data-theme="light"] .doc-stage-card,
-    [data-theme="light"] .index-card {
+    [data-theme="light"] .doc-sheet,
+    [data-theme="light"] .index-card,
+    [data-theme="light"] .index-item-card {
       background: #ffffff !important;
       border-color: #e2e8f0 !important;
       color: #0f172a !important;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04) !important;
+    }
+
+    [data-theme="light"] .index-item-card:hover {
+      background: #f8fafc !important;
+    }
+
+    [data-theme="light"] .index-item-title,
+    [data-theme="light"] .doc-route-title,
+    [data-theme="light"] .doc-section-title {
+      color: #0f172a !important;
+    }
+
+    [data-theme="light"] .doc-route-select,
+    [data-theme="light"] .search-input-wrapper input {
+      background: #ffffff !important;
+      border-color: #cbd5e1 !important;
+      color: #0f172a !important;
+    }
+
+    [data-theme="light"] .pager-btn {
+      background: #f1f5f9 !important;
+      border-color: #cbd5e1 !important;
+      color: #0f172a !important;
+    }
+
+    [data-theme="light"] .search-box {
+      background: #f8fafc !important;
+      border-bottom-color: #e2e8f0 !important;
+    }
+
+    [data-theme="light"] .region-nav {
+      background: #f1f5f9 !important;
+      border-bottom-color: #e2e8f0 !important;
+    }
+
+    [data-theme="light"] .region-tab {
+      background: #ffffff !important;
+      border-color: #cbd5e1 !important;
+      color: #475569 !important;
+    }
+
+    [data-theme="light"] .doc-stat-pill,
+    [data-theme="light"] .doc-tag {
+      background: #f1f5f9 !important;
+      border-color: #e2e8f0 !important;
+      color: #334155 !important;
+    }
+
+    [data-theme="light"] .doc-sheet-header {
+      border-bottom-color: #e2e8f0 !important;
     }
 
     [data-theme="light"] #sidebar-toggle {
@@ -1602,7 +1655,7 @@
       const updateIcon = (isDark) => {
         themeBtn.innerHTML = isDark ? '🌙' : '☀️';
       };
-      const savedTheme = localStorage.getItem('theme') || localStorage.getItem('jreyes13_theme') || 'dark';
+      const savedTheme = localStorage.getItem('theme') || localStorage.getItem('jreyes13_theme') || localStorage.getItem('wine3ai_theme') || 'dark';
       if (savedTheme === 'light') {
         document.documentElement.setAttribute('data-theme', 'light');
         updateIcon(false);
@@ -1617,11 +1670,13 @@
           document.documentElement.setAttribute('data-theme', 'light');
           localStorage.setItem('theme', 'light');
           localStorage.setItem('jreyes13_theme', 'light');
+          localStorage.setItem('wine3ai_theme', 'light');
           updateIcon(false);
         } else {
           document.documentElement.removeAttribute('data-theme');
           localStorage.setItem('theme', 'dark');
           localStorage.setItem('jreyes13_theme', 'dark');
+          localStorage.setItem('wine3ai_theme', 'dark');
           updateIcon(true);
         }
       });
